@@ -1,3 +1,4 @@
+import allure
 import pytest
 from selene.support import by
 from selene.support.conditions import be
@@ -11,10 +12,14 @@ def browser_open_setting():
     yield
 
 def test_github(browser_open_setting):
-    browser.open("https://github.com")
-    s(".header-search-input").click()
-    s(".header-search-input").send_keys("olgakos/demo_Dune_API")
-    s(".header-search-input").submit()
-    s(by.link_text("olgakos/demo_Dune_API")).click()
-    s("#issues-tab").click()
-    s(by.partial_text("#1")).should(be.visible)
+    with allure.step("Open Home Page"):
+        browser.open("https://github.com")
+    with allure.step("Search"):
+        s(".header-search-input").click()
+        s(".header-search-input").send_keys("olgakos/demo_Dune_API")
+    with allure.step("Submit"):
+        s(".header-search-input").submit()
+        s(by.link_text("olgakos/demo_Dune_API")).click()
+    with allure.step("Check"):
+        s("#issues-tab").click()
+        s(by.partial_text("#1")).should(be.visible)
