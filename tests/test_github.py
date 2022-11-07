@@ -12,10 +12,10 @@ def browser_open_setting(): #?(setup_browser)
     browser.config.window_height = 600
     yield
 '''
-@allure.title("Successful fill form")
+@allure.title("set_window_size")
 def browser_open_setting(setup_browser):
     browser = setup_browser
-    registration_form.given_opened(browser)
+    #registration_form.given_opened(browser)
     browser.driver.set_window_size(1920, 1500) #размер окна важен    
 
 def test_github(browser_open_setting):
