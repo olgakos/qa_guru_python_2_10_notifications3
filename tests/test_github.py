@@ -5,7 +5,7 @@ from selene.support.conditions import be
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 
-'''
+
 #запускается, но
 #selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
 @pytest.fixture(scope="session")
@@ -21,6 +21,7 @@ def browser_open_setting():
     #registration_form.given_opened(browser)
     browser.driver.set_window_size(1920, 1500) #размер окна важен 
     yield
+'''
 
 def test_github(browser_open_setting):
     with allure.step("Open Home Page"):
