@@ -5,11 +5,18 @@ from selene.support.conditions import be
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 
+'''
 @pytest.fixture(scope="session")
 def browser_open_setting(): #?(setup_browser)
     browser.config.window_width = 1400 #NB!
     browser.config.window_height = 600
     yield
+'''
+@allure.title("Successful fill form")
+def browser_open_setting(setup_browser):
+    browser = setup_browser
+    registration_form.given_opened(browser)
+    browser.driver.set_window_size(1920, 1500) #размер окна важен    
 
 def test_github(browser_open_setting):
     with allure.step("Open Home Page"):
