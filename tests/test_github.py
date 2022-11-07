@@ -6,7 +6,7 @@ from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 
 @pytest.fixture(scope="session")
-def browser_open_setting():
+def browser_open_setting(setup_browser):
     browser.config.window_width = 1400 #NB!
     browser.config.window_height = 600
     yield
