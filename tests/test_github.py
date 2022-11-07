@@ -8,13 +8,13 @@ from selene.support.shared.jquery_style import s
 '''
 @pytest.fixture(scope="session")
 def browser_open_setting(): #?(setup_browser)
-    browser.config.window_width = 1400 #NB!
-    browser.config.window_height = 600
+    browser.config.window_width = 1400 #размер окна важен 
+    browser.config.window_height = 600 #размер окна важен 
     yield
 '''
 @pytest.fixture(scope="session")
 #@allure.title("set_window_size")
-def browser_open_setting(setup_browser):
+def browser_open_setting():
     browser = setup_browser
     #registration_form.given_opened(browser)
     browser.driver.set_window_size(1920, 1500) #размер окна важен    
