@@ -5,7 +5,7 @@ from selene.support.conditions import be
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 
-'''
+
 #запускается, но
 #selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
 @pytest.fixture(scope="session")
@@ -13,7 +13,7 @@ def browser_open_setting():
     browser.config.window_width = 1400 #NB!
     browser.config.window_height = 600
     yield
-'''    
+    
 
 #def test_github(browser_open_setting):
 def test_github():
