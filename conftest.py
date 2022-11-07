@@ -33,7 +33,7 @@ def setup_browser(request):
         "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
-            "enableVideo": True
+            "enableVideo": True #!
         }
     }
     options.capabilities.update(selenoid_capabilities)
@@ -43,6 +43,7 @@ def setup_browser(request):
 
     driver = webdriver.Remote(
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
+        #command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options
     )
     browser = Browser(Config(driver))
