@@ -15,8 +15,8 @@ def browser_open_setting():
     yield
     
 
-#def test_github(browser_open_setting):
-def test_github():
+def test_github(browser_open_setting):
+#def test_github():
     with allure.step("Open Home Page"):
         browser.open("https://github.com")
     with allure.step("Search"):
