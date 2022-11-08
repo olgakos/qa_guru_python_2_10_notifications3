@@ -1,11 +1,12 @@
 import os
 
 import pytest
-from selene.support.shared import browser
-from selenium import webdriver  # взято с capabilites Selenoid! 1_9
-from selenium.webdriver.chrome.options import Options  # для удаленого 1_9
-from selene import Browser, Config
+from selene.support.shared import browser  #это УДАЛЕННЫЙ запуск (?)
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selene import Browser, Config #для локального запуска
 from dotenv import load_dotenv
+
 
 from utils import attach
 
@@ -48,7 +49,7 @@ def setup_browser(request):
         #command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub", #see file .env
         options=options
     )
-    #browser = Browser(Config(driver)) #это ЛОКАЛЬНЫЙ запуск драйвера Хром
+    #browser = Browser(Config(driver)) #это ЛОКАЛЬНЫЙ запуск драйвера Хром (сейчас не видив нужный импорт!)
     browser.config.driver = driver #это УДАЛЕННЫЙ запуск драйвера Хром
 
     yield browser
