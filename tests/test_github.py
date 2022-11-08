@@ -13,10 +13,10 @@ def browser_open_setting():
     browser.config.window_width = 1400 #NB!
     browser.config.window_height = 600
     yield
-    
 
-#def test_github(browser_open_setting):
-def test_github():
+
+def test_github(browser_open_setting): #разворот экрана 1400*600
+#def test_github():
     with allure.step("Open Home Page"):
         browser.open("https://github.com")
     with allure.step("Search"):
