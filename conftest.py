@@ -1,6 +1,7 @@
 import os
 
 import pytest
+from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import Browser, Config
@@ -41,13 +42,23 @@ def setup_browser(request):
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
 
+#------------------------------------------
+#это ЛОКАЛЬНЫЙ запуск драйвера
+    '''
     driver = webdriver.Remote(
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
-        #command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub", #cv file .env
+        #command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub", #см. file .env
         options=options
     )
-    browser = Browser(Config(driver))
+    browser = Browser(Config(driver))  
+'''
+#Это УДАЛЕННЫЙ запуск драйвера
+    driver = webdriver.Remote(
+        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
+        options=options)
 
+    browser.config.driver = driver
+    # ------------------------------------------
     yield browser
 
     attach.add_html(browser)
