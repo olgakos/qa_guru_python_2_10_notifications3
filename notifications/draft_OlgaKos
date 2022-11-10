@@ -1,0 +1,33 @@
+2022-11-08
+
+#Заголовок И имя моего бота
+olgakos_python_2_bot
+
+#Телеграм_бот_токен ОЛЯ:
+5651442214:AAEJQaCfdxthTEGc2Dd1UlE451cZKtxVjBQ
+#Чат айди ОЛЯ:
+-1001887535531
+
+#Телеграм_бот_токен СТАС:
+5647262179:AAFzUwfCKaiZEJcv-XAa2J28Cx7o16nZDI0
+#Чат айди СТАС:
+-1001576227336
+
+#https://api.telegram.org/botXXX:YYY/getUpdates (past Телеграм_бот_токен here)
+https://api.telegram.org/bot5651442214:AAEJQaCfdxthTEGc2Dd1UlE451cZKtxVjBQ/getUpdates
+
+Расширения JSONVue:
+chrome://extensions/ -> JSONVue
+https://chrome.google.com/webstore/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc?hl=ru
+
+#варик со СЛЭШАМИ
+curl -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{"chat_id": "-1001887535531", "text": "This is a test from Python (Olga Kos)", "disable_notification": true}' \
+     https://api.telegram.org/bot5651442214:AAEJQaCfdxthTEGc2Dd1UlE451cZKtxVjBQ/sendMessage
+
+#варик без СЛЭШЕЙ
+curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "-1001887535531", "text": "This is a test from Python (Olga Kos)", "disable_notification": true}' https://api.telegram.org/bot5651442214:AAEJQaCfdxthTEGc2Dd1UlE451cZKtxVjBQ/sendMessage
+
+
+java "-DconfigFile=notifications/telegram-config.json" -jar notifications/allure-notifications-4.2.1.jar
