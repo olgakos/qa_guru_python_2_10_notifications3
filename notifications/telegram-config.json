@@ -1,8 +1,8 @@
 {
   "base": {
-    "project": "some project NAME Dune test",
-    "environment": "some env: GitHub Dune test",
-    "comment": "Olga's some comment",
+    "project": "some project: /Dune-api test LOCAL",
+    "environment": "some env: / TEST-PROD",
+    "comment": "some comment / local",
     "reportLink": "",
     "language": "en",
     "allureFolder": "allure-report/",
