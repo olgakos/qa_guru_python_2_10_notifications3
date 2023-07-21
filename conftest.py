@@ -23,13 +23,13 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope='session', autouse=True)
 def load_env():
-    load_dotenv()
+    load_dotenv()https://github.com/olgakos/qa_guru_python_2_10_notifications3/blob/jenkins/conftest.py
 
 
 @pytest.fixture(scope='function')
 def setup_browser(request):
-    browser.config.window_width = 1600 #NB!
-    browser.config.window_height = 1024 #NB! 
+    browser.config.window_width = 1920 #NB!
+    browser.config.window_height = 1600 #NB! 
     browser_version = request.config.getoption('--browser_version')
     browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     options = Options()
