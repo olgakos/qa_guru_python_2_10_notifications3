@@ -28,8 +28,8 @@ def load_env():
 
 @pytest.fixture(scope='function')
 def setup_browser(request):
-    browser.config.window_width = 1400  # NB!
-    browser.config.window_height = 600
+    browser.config.window_width = 1600 #NB!
+    browser.config.window_height = 1024 #NB! 
     browser_version = request.config.getoption('--browser_version')
     browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     options = Options()
