@@ -10,14 +10,14 @@ from selene.support.shared.jquery_style import s
 #selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
 @pytest.fixture(scope="session")
 def browser_open_setting():
-    browser.config.window_width = 1400 #NB!
-    browser.config.window_height = 600
+    browser.config.window_width = 1800 #NB!
+    browser.config.window_height = 1024 #NB!
     yield
 '''
 
 #def test_github(browser_open_setting):
 #def test_github():
-def test_github(setup_browser):
+def test_github(setup_browser):    
     with allure.step("Open Home Page"):
         browser.open("https://github.com")
     with allure.step("Search"):
