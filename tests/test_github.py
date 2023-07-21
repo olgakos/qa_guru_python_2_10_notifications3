@@ -30,17 +30,17 @@ def test_github(setup_browser):
         s("#issues-tab").click()
         s(by.partial_text("#1")).should(be.visible)
 
+
 #def test_github_eroshenkoam(): #БЫЛО
 def test_github_eroshenkoam(setup_browser):
-    
-    browser.open("https://github.com")
-    
-    s(".header-search-input").click()
-    s(".header-search-input").send_keys("eroshenkoam/allure-example")
-    s(".header-search-input").submit()
-
-    s(by.link_text("eroshenkoam/allure-example")).click()
-
-    s("#issues-tab").click()
-
-    s(by.partial_text("#76")).should(be.visible)
+     with allure.step("Open Home Page"):
+        browser.open("https://github.com")
+     with allure.step("Search"):
+        s(".header-search-input").click()
+        s(".header-search-input").send_keys("eroshenkoam/allure-example")        
+    with allure.step("Submit"):
+        s(".header-search-input").submit()
+        s(by.link_text("eroshenkoam/allure-example")).click()
+    with allure.step("Check"):
+        s("#issues-tab").click()
+        s(by.partial_text("#76")).should(be.visible)
